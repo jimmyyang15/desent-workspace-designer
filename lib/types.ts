@@ -7,5 +7,5 @@ export interface WorkspaceItem {
   price: number;
   image: string;
   category: Category;
-  position: { top: string; left: string; width: string; z: number };
+  position: { bottom: string; left: string; width: string; z: number };
 }

@@ -6,9 +6,9 @@ export const desks: WorkspaceItem[] = [
     slug: "electric-standing",
     name: "Electric Standing Desk",
     price: 8,
-    image: "/assets/desk-electric.jpeg",
+    image: "/assets/wooden-electrical.png",
     category: "desk",
-    position: { top: "58%", left: "5%", width: "90%", z: 20 },
+    position: { bottom: "0%", left: "40%", width: "70%", z: 20 } 
   },
   {
     id: "desk-mechanical",
@@ -17,7 +17,7 @@ export const desks: WorkspaceItem[] = [
     price: 5,
     image: "/assets/desk-mechanical.jpeg",
     category: "desk",
-    position: { top: "58%", left: "5%", width: "90%", z: 20 },
+    position: { bottom: "0%", left: "5%", width: "90%", z: 20 } 
   },
 ];
 
@@ -27,9 +27,9 @@ export const chairs: WorkspaceItem[] = [
     slug: "ergonomic-mesh",
     name: "Ergonomic Mesh Chair",
     price: 4,
-    image: "/assets/chair-mesh.jpeg",
+    image: "/assets/egornomic-chair.png",
     category: "chair",
-    position: { top: "45%", left: "38%", width: "26%", z: 10 },
+    position: { bottom: "0%", left: "20%", width: "40%", z: 10 } 
   },
   {
     id: "chair-fabric",
@@ -38,7 +38,7 @@ export const chairs: WorkspaceItem[] = [
     price: 4,
     image: "/assets/chair-fabric.jpeg",
     category: "chair",
-    position: { top: "45%", left: "38%", width: "26%", z: 10 },
+    position: { bottom: "38%", left: "38%", width: "24%", z: 10 } 
   },
 ];
 
@@ -50,7 +50,7 @@ export const accessories: WorkspaceItem[] = [
     price: 3,
     image: "/assets/monitor.jpeg",
     category: "accessory",
-    position: { top: "22%", left: "42%", width: "16%", z: 30 },
+    position: { bottom: "62%", left: "42%", width: "14%", z: 30 } // monitor
   },
   {
     id: "lamp",
