@@ -5,7 +5,7 @@ import { ShoppingBag } from "lucide-react";
 import { WorkspaceItem } from "@/lib/types";
 import { useCheckout } from "@/hooks/use-checkout";
 import { RainbowButton } from "@/components/ui/rainbow-button";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import { useTheme } from "next-themes";
 import { cn } from "cn";
 interface Props {
@@ -21,15 +21,17 @@ export function CheckoutSheet({ desk, chair, accessories, total }: Props) {
   const { theme } = useTheme()
   return (
     <Sheet>
-      <SheetTrigger>
-        <Button className='relative rounded-md w-full h-10 overflow-hidden before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.5)_50%,transparent_75%,transparent_100%)] before:bg-size-[250%_250%,100%_100%] before:bg-position-[200%_0,0_0] before:bg-no-repeat before:transition-[background-position_0s_ease] before:duration-1000 hover:before:bg-position-[-100%_0,0_0] dark:before:bg-[linear-gradient(45deg,transparent_25%,rgba(0,0,0,0.2)_50%,transparent_75%,transparent_100%)]'>
-          <ShoppingBag className="w-4 h-4" /> View setup (${total})
-        </Button>
-
-      </SheetTrigger>
+        <SheetTrigger
+          className={cn(
+              buttonVariants(),
+              'relative rounded-md w-full h-10 overflow-hidden before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.5)_50%,transparent_75%,transparent_100%)] before:bg-size-[250%_250%,100%_100%] before:bg-position-[200%_0,0_0] before:bg-no-repeat before:transition-[background-position_0s_ease] before:duration-1000 hover:before:bg-position-[-100%_0,0_0] dark:before:bg-[linear-gradient(45deg,transparent_25%,rgba(0,0,0,0.2)_50%,transparent_75%,transparent_100%)]'
+          )}
+        >
+            <ShoppingBag className="w-4 h-4 mr-2" />Checkout (${total})
+        </SheetTrigger>
       <SheetContent className="bg-background border-border">
         <SheetHeader>
-          <SheetTitle className="text-foreground">Setup breakdown</SheetTitle>
+          <SheetTitle className="text-foreground">Checkout summary</SheetTitle>
         </SheetHeader>
         <div className="mt-6">
           {[desk, chair, ...accessories].map((item) => (
@@ -48,7 +50,7 @@ export function CheckoutSheet({ desk, chair, accessories, total }: Props) {
                 "text-black": theme === "dark",
                 "text-white": theme === "light",
               })}
-              onClick={() => submitOrder({ desk, chair, accessories, total })}
+              onClick={submitOrder}
             >
               Rent your setup
             </RainbowButton>

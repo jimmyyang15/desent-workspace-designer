@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { WorkspaceItem } from "@/lib/types";
+import { Position, WorkspaceItem } from "@/lib/types";
 
-export function PreviewItem({ item }: { item: WorkspaceItem }) {
+export function PreviewItem({ item,position }: { item: WorkspaceItem,position:Partial<Position> }) {
   return (
     <motion.div
       key={item.id}
@@ -14,10 +14,11 @@ export function PreviewItem({ item }: { item: WorkspaceItem }) {
       transition={{ duration: 0.2, ease: "easeOut" }}
       className="absolute"
       style={{
-        bottom: item.position.bottom,
-        left: item.position.left,
-        width: item.position.width,
-        zIndex: item.position.z,
+        bottom: position.bottom,
+        left: position.left,
+        width: position.width,
+        height: position.height,
+        zIndex: position.z,
       }}
     >
       <Image src={item.image} alt={item.name} width={400} height={400} className="w-full h-auto drop-shadow-lg" />

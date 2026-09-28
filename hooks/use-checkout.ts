@@ -1,22 +1,26 @@
-"use client";
+import { toast } from "sonner";
 
-import { WorkspaceItem } from "@/lib/types";
-import { useLocalStorage } from "@/hooks/use-local-storage";
-
-export interface CheckoutRecord {
-  desk: WorkspaceItem;
-  chair: WorkspaceItem;
-  accessories: WorkspaceItem[];
-  total: number;
-  createdAt: string;
-}
-
+const mockApiCall = (): Promise<{ orderId: string }> => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const isSuccess = true; 
+      if (isSuccess) {
+        resolve({ orderId: "ORD-9982" });
+      } else {
+        reject(new Error("Failed to process payment"));
+      }
+    }, 1500);
+  });
+};
 export function useCheckout() {
-  const [lastOrder, setLastOrder] = useLocalStorage<CheckoutRecord | null>("monis-last-order", null);
 
-  const submitOrder = (record: Omit<CheckoutRecord, "createdAt">) => {
-    setLastOrder({ ...record, createdAt: new Date().toISOString() });
+ const submitOrder = () => {
+    toast.promise(mockApiCall(), {
+      loading: "Processing your workspace setup order...",
+      success: (data) => `Order confirmed! Reference: ${data.orderId}`,
+      error: (err: Error) => err.message || "Failed to place order. Please try again.",
+    });
   };
 
-  return { lastOrder, submitOrder };
+  return {  submitOrder };
 }
