@@ -31,13 +31,10 @@ export function WorkspacePreview({ desk, chair, selectedAccessories }: Props) {
     try {
       setIsExporting(true);
 
-      // Export options
       const options = {
         quality: 0.95,
         cacheBust: true,
-        // Ensure white background for JPEG exports if there are transparent areas
         ...(format === 'jpeg' && { backgroundColor: '#ffffff' }),
-        // Scale up pixel density for high resolution download
         pixelRatio: 2,
       };
 
@@ -46,7 +43,6 @@ export function WorkspacePreview({ desk, chair, selectedAccessories }: Props) {
           ? await toPng(previewRef.current, options)
           : await toJpeg(previewRef.current, options);
 
-      // Trigger download
       const link = document.createElement('a');
       link.download = `workspace-preview.${format}`;
       link.href = dataUrl;
@@ -84,12 +80,10 @@ export function WorkspacePreview({ desk, chair, selectedAccessories }: Props) {
         </DropdownMenu>
       </div>
 
-      {/* Main Preview Container */}
       <div
         ref={previewRef}
         className="relative w-full aspect-video bg-muted rounded-xl border border-border overflow-hidden"
       >
-        {/* Background Image Layer */}
         {activeBg && (
           <img
             src={activeBg.src}
@@ -98,7 +92,6 @@ export function WorkspacePreview({ desk, chair, selectedAccessories }: Props) {
           />
         )}
 
-        {/* Workspace Items */}
         <AnimatePresence>
           <PreviewItem key={chair.id} item={chair} position={getItemPosition(chair,activeBg.id)} />
           <PreviewItem key={desk.id} item={desk} position={getItemPosition(desk,activeBg.id)} />
