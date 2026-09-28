@@ -8,7 +8,7 @@ export const desks: WorkspaceItem[] = [
     price: 8,
     image: "/assets/electrical-desk.png",
     category: "desk",
-    position: { bottom: "0", left: "10%", width: "75%",z: 20 }
+    position: { bottom: "0", left: "10%", width: "75%",z: 10 }
   },
   {
     id: "desk-mechanical",
@@ -17,7 +17,7 @@ export const desks: WorkspaceItem[] = [
     price: 10,
     image: "/assets/lshape-desk.png",
     category: "desk",
-    position: { bottom: "0", left: "10%", width: "75%", z: 20 }
+    position: { bottom: "0", left: "10%", width: "75%", z: 10 }
   },
 ];
 
@@ -29,7 +29,7 @@ export const chairs: WorkspaceItem[] = [
     price: 6,
     image: "/assets/office-chair.png",
     category: "chair",
-    position: { bottom: "0", left: "15%", width: "55%", z: 30 }
+    position: { bottom: "0", left: "15%", width: "55%", z: 20 }
   },
   {
     id: "gaming-chair",
@@ -38,7 +38,7 @@ export const chairs: WorkspaceItem[] = [
     price: 6,
     image: "/assets/gaming-chair.png",
     category: "chair",
-    position: { bottom: "0", left: "15%", width: "55%", z: 30 }
+    position: { bottom: "0", left: "15%", width: "55%", z: 20 }
   },
 ];
 
@@ -50,7 +50,7 @@ export const accessories: WorkspaceItem[] = [
     price: 5,
     image: "/assets/monitor.png",
     category: "accessory",
-    position: { bottom: "15%", left: "25%", width: "50%", z: 20 } // monitor
+    position: { bottom: "15%", left: "25%", width: "50%", z: 30 } // monitor
   },
   {
     id: "lamp",
@@ -59,7 +59,7 @@ export const accessories: WorkspaceItem[] = [
     price: 2,
     image: "/assets/lamp.png",
     category: "accessory",
-    position: { bottom: "43%", left: "60%", width: "10%", z: 20 },
+    position: { bottom: "43%", left: "60%", width: "10%", z: 10 },
   },
   {
     id: "plant",
@@ -68,7 +68,7 @@ export const accessories: WorkspaceItem[] = [
     price: 1,
     image: "/assets/plant.png",
     category: "accessory",
-    position: { bottom: "45%", left: "40%", width: "10%", z: 20 },
+    position: { bottom: "45%", left: "40%", width: "10%", z: 10 },
 
   },
   {
@@ -78,7 +78,7 @@ export const accessories: WorkspaceItem[] = [
     price:7,
     image:"/assets/coffee-machine.png",
     category:'accessory',
-    position: { bottom: "40%", left: "70%", width: "25%", z: 10 },
+    position: { bottom: "40%", left: "70%", width: "25%", z: 5 },
     backgroundPositions: {
       "rice-terrace": { bottom: "38%", left: "78%", width: "24%"},
       "bali-villa": { bottom: "25%", left: "75%", width: "24%" },

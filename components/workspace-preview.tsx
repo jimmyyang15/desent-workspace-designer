@@ -5,7 +5,6 @@ import { WorkspaceItem } from "@/lib/types";
 import { PreviewItem } from "@/components/preview-item";
 import { useSearchParams } from "next/navigation";
 import { backgrounds } from "@/lib/data";
-import { getItemPosition } from "@/lib/utils";
 import { useRef, useState } from "react";
 import { toPng, toJpeg } from 'html-to-image';
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
@@ -93,10 +92,10 @@ export function WorkspacePreview({ desk, chair, selectedAccessories }: Props) {
         )}
 
         <AnimatePresence>
-          <PreviewItem key={chair.id} item={chair} position={getItemPosition(chair,activeBg.id)} />
-          <PreviewItem key={desk.id} item={desk} position={getItemPosition(desk,activeBg.id)} />
+          <PreviewItem key={chair.id} item={chair} containerRef={previewRef} />
+          <PreviewItem key={desk.id} item={desk} containerRef={previewRef} />
           {selectedAccessories.map((item) => (
-            <PreviewItem key={item.id} item={item} position={getItemPosition(item,activeBg.id)} />
+            <PreviewItem key={item.id} item={item} containerRef={previewRef} />
           ))}
         </AnimatePresence>
       </div>
