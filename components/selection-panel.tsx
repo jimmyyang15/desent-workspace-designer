@@ -32,7 +32,7 @@ export function SelectionPanel({
       <TabsList className="grid grid-cols-3">
         <TabsTrigger value="desk">Desks</TabsTrigger>
         <TabsTrigger value="chair">Chairs</TabsTrigger>
-        <TabsTrigger value="accessories">Extras</TabsTrigger>
+        <TabsTrigger value="accessories">Accessories</TabsTrigger>
       </TabsList>
 
       <TabsContent value="desk" className="mt-4 space-y-3">

@@ -1,11 +1,12 @@
 "use client";
 
 import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
-import { Button } from "@/components/ui/button";
 import { ShoppingBag } from "lucide-react";
 import { WorkspaceItem } from "@/lib/types";
 import { useCheckout } from "@/hooks/use-checkout";
-
+import { RainbowButton } from "@/components/ui/rainbow-button";
+import { Button } from "@/components/ui/button";
+import { useTheme } from "next-themes";
 interface Props {
   desk: WorkspaceItem;
   chair: WorkspaceItem;
@@ -16,12 +17,15 @@ interface Props {
 export function CheckoutSheet({ desk, chair, accessories, total }: Props) {
   const { submitOrder } = useCheckout();
 
+  const { theme } = useTheme()
+  console.log("Theme: ", theme)
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button className="w-full py-6 bg-primary hover:bg-primary/90 text-primary-foreground font-semibold flex items-center justify-center gap-2">
+      <SheetTrigger>
+        <Button className='relative rounded-md w-full h-10 overflow-hidden before:absolute before:inset-0 before:rounded-[inherit] before:bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.5)_50%,transparent_75%,transparent_100%)] before:bg-size-[250%_250%,100%_100%] before:bg-position-[200%_0,0_0] before:bg-no-repeat before:transition-[background-position_0s_ease] before:duration-1000 hover:before:bg-position-[-100%_0,0_0] dark:before:bg-[linear-gradient(45deg,transparent_25%,rgba(0,0,0,0.2)_50%,transparent_75%,transparent_100%)]'>
           <ShoppingBag className="w-4 h-4" /> View setup (${total})
         </Button>
+
       </SheetTrigger>
       <SheetContent className="bg-background border-border">
         <SheetHeader>
@@ -35,18 +39,18 @@ export function CheckoutSheet({ desk, chair, accessories, total }: Props) {
             </div>
           ))}
           <div className="px-4">
-   <div className="flex justify-between pt-4 text-primary font-semibold">
-            <span>Total</span>
-            <span>${total}/week</span>
+            <div className="flex justify-between pt-4 text-primary font-semibold">
+              <span>Total</span>
+              <span>${total}/week</span>
+            </div>
+            <RainbowButton
+              className="mt-4 w-full text-black dark:text-white"
+              onClick={() => submitOrder({ desk, chair, accessories, total })}
+            >
+              Rent your setup
+            </RainbowButton>
           </div>
-          <Button
-            className="w-full mt-4  bg-primary hover:bg-primary/90 text-primary-foreground"
-            onClick={() => submitOrder({ desk, chair, accessories, total })}
-          >
-            Rent your setup
-          </Button>
-          </div>
-       
+
         </div>
       </SheetContent>
     </Sheet>

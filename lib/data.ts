@@ -1,4 +1,4 @@
-import { WorkspaceItem } from "./types";
+import { WorkspaceItem } from "@/lib/types";
 
 export const desks: WorkspaceItem[] = [
   {
@@ -6,18 +6,18 @@ export const desks: WorkspaceItem[] = [
     slug: "electric-standing",
     name: "Electric Standing Desk",
     price: 8,
-    image: "/assets/wooden-electrical.png",
+    image: "/assets/electrical-desk.png",
     category: "desk",
-    position: { bottom: "0%", left: "40%", width: "70%", z: 20 } 
+    position: { bottom: "0%", right: "0", width: "60%", z: 20 }
   },
   {
     id: "desk-mechanical",
     slug: "mechanical",
     name: "Mechanical Desk",
     price: 5,
-    image: "/assets/desk-mechanical.jpeg",
+    image: "/assets/lshape-desk.png",
     category: "desk",
-    position: { bottom: "0%", left: "5%", width: "90%", z: 20 } 
+    position: { bottom: "0%", right: "0", width: "60%", z: 20 }
   },
 ];
 
@@ -27,18 +27,18 @@ export const chairs: WorkspaceItem[] = [
     slug: "ergonomic-mesh",
     name: "Ergonomic Mesh Chair",
     price: 4,
-    image: "/assets/egornomic-chair.png",
+    image: "/assets/office-chair.png",
     category: "chair",
-    position: { bottom: "0%", left: "20%", width: "40%", z: 10 } 
+    position: { bottom: "0", left: "0", width: "45%", z: 30 }
   },
   {
-    id: "chair-fabric",
-    slug: "ergonomic-fabric",
-    name: "Ergonomic Fabric Chair",
+    id: "gaming-chair",
+    slug: "ergonomic-gaming",
+    name: "Ergonomic Gaming Chair",
     price: 4,
-    image: "/assets/chair-fabric.jpeg",
+    image: "/assets/gaming-chair.png",
     category: "chair",
-    position: { bottom: "38%", left: "38%", width: "24%", z: 10 } 
+    position: { bottom: "0", left: "0", width: "45%", z: 30 }
   },
 ];
 
@@ -48,27 +48,28 @@ export const accessories: WorkspaceItem[] = [
     slug: "monitor",
     name: "Monitor",
     price: 3,
-    image: "/assets/monitor.jpeg",
+    image: "/assets/monitor.png",
     category: "accessory",
-    position: { bottom: "62%", left: "42%", width: "14%", z: 30 } // monitor
+    position: { bottom: "12%", left: "10%", width: "40%", z: 30 } // monitor
   },
   {
     id: "lamp",
     slug: "lamp",
     name: "Desk Lamp",
     price: 1,
-    image: "/assets/lamp.jpeg",
+    image: "/assets/lamp.png",
     category: "accessory",
-    position: { top: "30%", left: "70%", width: "12%", z: 30 },
+    position: { bottom: "36%", left: "20%", width: "10%", z: 20 },
   },
   {
     id: "plant",
     slug: "plant",
     name: "Plant",
     price: 1,
-    image: "/assets/plant.jpeg",
+    image: "/assets/plant.png",
     category: "accessory",
-    position: { top: "35%", left: "18%", width: "10%", z: 30 },
+    position: { bottom: "-8%", left: "30%", width: "60%", z: 30 },
+
   },
 ];
 

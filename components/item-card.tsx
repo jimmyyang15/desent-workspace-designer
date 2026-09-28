@@ -3,6 +3,7 @@
 import { Check, Plus } from "lucide-react";
 import { WorkspaceItem } from "@/lib/types";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 interface Props {
   item: WorkspaceItem;
@@ -12,10 +13,11 @@ interface Props {
 
 export function ItemCard({ item, selected, onSelect }: Props) {
   return (
-    <button
+    <Button
       onClick={() => onSelect(item)}
+      variant="outline"
       className={cn(
-        "w-full flex items-center justify-between p-4 rounded-xl border transition-colors text-left",
+        "w-full flex items-center h-14 justify-between p-4 rounded-xl border transition-colors text-left",
         selected ? "border-primary bg-card" : "border-border bg-background hover:border-primary/50"
       )}
     >
@@ -24,6 +26,6 @@ export function ItemCard({ item, selected, onSelect }: Props) {
         <p className="text-xs text-muted-foreground">${item.price}/week</p>
       </div>
       {selected ? <Check className="w-4 h-4 text-primary" /> : <Plus className="w-4 h-4 text-muted-foreground" />}
-    </button>
+    </Button>
   );
 }

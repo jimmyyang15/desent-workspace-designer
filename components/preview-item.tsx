@@ -14,7 +14,7 @@ export function PreviewItem({ item }: { item: WorkspaceItem }) {
       transition={{ duration: 0.2, ease: "easeOut" }}
       className="absolute"
       style={{
-        top: item.position.top,
+        bottom: item.position.bottom,
         left: item.position.left,
         width: item.position.width,
         zIndex: item.position.z,
