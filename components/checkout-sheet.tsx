@@ -7,6 +7,7 @@ import { useCheckout } from "@/hooks/use-checkout";
 import { RainbowButton } from "@/components/ui/rainbow-button";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "next-themes";
+import { cn } from "cn";
 interface Props {
   desk: WorkspaceItem;
   chair: WorkspaceItem;
@@ -18,7 +19,6 @@ export function CheckoutSheet({ desk, chair, accessories, total }: Props) {
   const { submitOrder } = useCheckout();
 
   const { theme } = useTheme()
-  console.log("Theme: ", theme)
   return (
     <Sheet>
       <SheetTrigger>
@@ -44,7 +44,10 @@ export function CheckoutSheet({ desk, chair, accessories, total }: Props) {
               <span>${total}/week</span>
             </div>
             <RainbowButton
-              className="mt-4 w-full text-black dark:text-white"
+              className={cn("mt-4 w-full", {
+                "text-black": theme === "dark",
+                "text-white": theme === "light",
+              })}
               onClick={() => submitOrder({ desk, chair, accessories, total })}
             >
               Rent your setup
