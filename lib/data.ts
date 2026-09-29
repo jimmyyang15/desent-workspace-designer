@@ -29,7 +29,7 @@ export const chairs: WorkspaceItem[] = [
     price: 6,
     image: "/assets/office-chair.png",
     category: "chair",
-    position: { bottom: "0", left: "15%", width: "55%", z: 20 }
+    position: { bottom: "0", left: "30%", width: "22%", z: 20 }
   },
   {
     id: "gaming-chair",
@@ -38,7 +38,7 @@ export const chairs: WorkspaceItem[] = [
     price: 6,
     image: "/assets/gaming-chair.png",
     category: "chair",
-    position: { bottom: "0", left: "15%", width: "55%", z: 20 }
+    position: { bottom: "0", left: "30%", width: "22%", z: 20 }
   },
 ];
 
@@ -50,7 +50,7 @@ export const accessories: WorkspaceItem[] = [
     price: 5,
     image: "/assets/monitor.png",
     category: "accessory",
-    position: { bottom: "15%", left: "25%", width: "50%", z: 30 } // monitor
+    position: { bottom: "45%", left: "45%", width: "20%", z: 30 } // monitor
   },
   {
     id: "lamp",
